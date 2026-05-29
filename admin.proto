@@ -6,7 +6,6 @@ option go_package = "github.com/oexza/Orisun/orisun";
 option java_package = "com.orisun.admin";
 
 import "google/protobuf/timestamp.proto";
-import "eventstore.proto";
 
 // AdminUser represents a user in the system
 message AdminUser {
@@ -110,7 +109,4 @@ service Admin {
   rpc GetUserCount(GetUserCountRequest) returns (GetUserCountResponse);
   rpc GetEventCount(GetEventCountRequest) returns (GetEventCountResponse);
 
-  // Index Management. Prefer EventStore.CreateIndex and EventStore.DropIndex for new clients.
-  rpc CreateIndex(CreateIndexRequest) returns (CreateIndexResponse);
-  rpc DropIndex(DropIndexRequest)     returns (DropIndexResponse);
 }
